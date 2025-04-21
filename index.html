@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ebalanza Crafted</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <!-- Ícono del carrito -->
+  <div id="icono-carrito" onclick="toggleCarrito()">
+    🛒 <span id="contador">0</span>
+    <div id="carrito-desplegable" class="oculto">
+      <h3>Carrito:</h3>
+      <ul id="lista-carrito"></ul>
+      <p id="total-carrito">Total: $0.00</p>
+      <button id="vaciar-carrito" onclick="vaciarCarrito()">Vaciar carrito</button>
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="Logo/banner ebalanza.png" alt="Banner de Ebalanza Crafted">
+  </div>
+
+  <h3>Productos</h3>
+
+  <div class="contenedor-productos">
+
+    <!-- Producto: Timex con Swiper -->
+    <div class="producto">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="Relojes/timex.jpg" alt="Timex 2br">
+          </div>
+          <div class="swiper-slide">
+            <img src="Relojes/o.jpg" alt="Aknight Lateral">
+          </div>
+          <div class="swiper-slide">
+            <video controls width="100%">
+              <source src="Relojes/20230830_032409000_iOS.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <h4>Timex 2br</h4>
+      <p>Precio: $20.00</p>
+      <button onclick="agregarAlCarrito('Timex 2br', 20)">Agregar al carrito</button>
+    </div>
+
+    <!-- Producto: Saphero -->
+    <div class="producto">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="Relojes/saphero delanetero.jpg" alt="Saphero delanetero">
+          </div>
+          <div class="swiper-slide">
+            <img src="Relojes/20230829_163640614_iOS.jpg" alt="Aknight Lateral">
+          </div>
+          <div class="swiper-slide">
+            <video controls width="100%">
+              <source src="Relojes/20230830_031255000_iOS.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <h4>Saphero</h4>
+      <p>Precio: $45.00</p>
+      <button onclick="agregarAlCarrito('Saphero', 45)">Agregar al carrito</button>
+    </div>
+
+    <!-- Producto: Aknight con Swiper -->
+    <div class="producto">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="Relojes/Aknight delantero.jpg" alt="Aknight Frente">
+          </div>
+          <div class="swiper-slide">
+            <img src="Relojes/Aknight delantero.jpg" alt="Aknight Lateral">
+          </div>
+          <div class="swiper-slide">
+            <video controls width="100%">
+              <source src="Relojes/20230903_215728000_iOS.MOV" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <h4>Aknight</h4>
+      <p>Precio: $25.00</p>
+      <button onclick="agregarAlCarrito('Aknight', 25)">Agregar al carrito</button>
+    </div>
+
+    <!-- Producto: Tank -->
+    <div class="producto">
+      <img src="Relojes/Tank trasero.jpg" alt="Tank">
+      <h4>Tank</h4>
+      <p>Precio: $25.00</p>
+      <button onclick="agregarAlCarrito('Tank', 25)">Agregar al carrito</button>
+    </div>
+
+    <!-- Producto: Geofrey -->
+    <div class="producto">
+      <img src="Relojes/geofrey.jpg" alt="Geofrey">
+      <h4>Geofrey</h4>
+      <p>Precio: $40.00</p>
+      <button onclick="agregarAlCarrito('Geofrey', 40)">Agregar al carrito</button>
+    </div>
+
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Script de tu carrito -->
+  <script src="script.js"></script>
+
+  <!-- Inicialización Swiper para múltiples sliders -->
+  <script>
+    document.querySelectorAll('.mySwiper').forEach((swiperEl) => {
+      new Swiper(swiperEl, {
+        loop: true,
+        pagination: {
+          el: swiperEl.querySelector('.swiper-pagination'),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: swiperEl.querySelector('.swiper-button-next'),
+          prevEl: swiperEl.querySelector('.swiper-button-prev'),
+        },
+      });
+    });
+  </script>
+
+</body>
+</html>
